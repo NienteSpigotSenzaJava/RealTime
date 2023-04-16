@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.StringUtil;
 
@@ -34,68 +35,77 @@ public class RealTimeCommand implements CommandExecutor, TabCompleter {
 
         FileConfiguration config = plugin.getConfig();
 
-        if (args.length == 1) {
+        if (sender instanceof Player) {
 
-            if (args[0].equals("activate")) {
+            Player player = (Player) sender;
 
-                if (config.getBoolean("activated")) {
+            if (args.length == 1) {
 
-                    sender.sendMessage(config.getString("messages.already_activated"));
+                if (args[0].equals("activate")) {
 
-                } else {
+                    if (config.getBoolean("activated")) {
 
-                    config.set("activated", true);
-                    RealTime.startTask(plugin);
+                        player.sendMessage(config.getString("messages.already_activated"));
 
-                    sender.sendMessage(config.getString("messages.activated"));
+                    } else {
+
+                        config.set("activated", true);
+                        RealTime.startTask(plugin);
+
+                        player.sendMessage(config.getString("messages.activated"));
+
+                    }
+
+                } else if (args[0].equals("deactivate")) {
+
+                    if (!config.getBoolean("activated")) {
+
+                        player.sendMessage(config.getString("messages.already_deactivated"));
+
+                    } else {
+
+                        config.set("activated", false);
+                        RealTime.cancelTask(plugin);
+
+                        player.sendMessage(config.getString("messages.deactivated"));
+
+                    }
+
+                } else if (args[0].equals("timezone")) {
+
+                    player.sendMessage(config.getString("messages.current_timezone").replace("%timezone%", config.getString("timezone")));
+
+                } else if (args[0].equals("time")) {
+
+                    ZoneId timezone = ZoneId.of(config.getString("timezone"));
+                    ZonedDateTime now = ZonedDateTime.now(timezone);
+
+                    player.sendMessage(config.getString("messages.current_time").replace("%time%", now.toLocalTime().format(DateTimeFormatter.ofPattern("H:m:s"))));
+
+                }
+
+            } else if (args.length == 2) {
+
+                if (args[0].equals("timezone")) {
+
+                    if (!ZoneId.getAvailableZoneIds().contains(args[1])) {
+
+                        player.sendMessage(config.getString("messages.wrong_timezone").replace("%timezone%", config.getString("timezone")));
+
+                    } else {
+
+                        config.set("timezone", args[1]);
+                        RealTime.restartTask(plugin);
+
+                        player.sendMessage(config.getString("messages.timezone_updated").replace("%timezone%", config.getString("timezone")));
+
+                    }
 
                 }
 
-            } else if (args[0].equals("deactivate")) {
+            } else {
 
-                if (!config.getBoolean("activated")) {
-
-                    sender.sendMessage(config.getString("messages.already_deactivated"));
-
-                } else {
-
-                    config.set("activated", false);
-                    RealTime.cancelTask(plugin);
-
-                    sender.sendMessage(config.getString("messages.deactivated"));
-
-                }
-
-            } else if (args[0].equals("timezone")) {
-
-                sender.sendMessage(config.getString("messages.current_timezone").replace("%timezone%", config.getString("timezone")));
-
-            } else if (args[0].equals("time")) {
-
-                ZoneId timezone = ZoneId.of(config.getString("timezone"));
-                ZonedDateTime now = ZonedDateTime.now(timezone);
-
-                sender.sendMessage(config.getString("messages.current_time").replace("%time%", now.toLocalTime().format(DateTimeFormatter.ofPattern("H:m:s"))));
-
-            }
-
-
-        } else if (args.length == 2) {
-
-            if (args[0].equals("timezone")) {
-
-                if (!ZoneId.getAvailableZoneIds().contains(args[1])) {
-
-                    sender.sendMessage(config.getString("messages.wrong_timezone").replace("%timezone%", config.getString("timezone")));
-
-                } else {
-
-                    config.set("timezone", args[1]);
-                    RealTime.restartTask(plugin);
-
-                    sender.sendMessage(config.getString("messages.timezone_updated").replace("%timezone%", config.getString("timezone")));
-
-                }
+                player.sendMessage(config.getString("messages.wrong_syntax"));
 
             }
 

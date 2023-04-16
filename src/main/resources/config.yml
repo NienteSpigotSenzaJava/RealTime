@@ -34,3 +34,4 @@ messages:
   wrong_timezone: "§cThe timezone you typed does not exist!"
   timezone_updated: "§aTimezone updated to §e§l%timezone%§r§a."
   current_time: "§bIt's §e§l%time%§r§b."
+  wrong_syntax: "§cPlease type 1 (max 2) arguments."
