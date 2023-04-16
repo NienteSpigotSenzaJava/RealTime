@@ -1,0 +1,9 @@
+name: RealTime
+version: '${project.version}'
+main: me.nssj.realtime.RealTime
+api-version: 1.13
+commands:
+  rtime:
+    usage: /<command> [arg]
+    permission: realtime.use
+    aliases: [rt, realtime]

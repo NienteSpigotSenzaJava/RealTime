@@ -1,0 +1,36 @@
+# ooooooooo.                       oooo  ooooooooooooo  o8o
+# `888   `Y88.                     `888  8'   888   `8  `"'
+#  888   .d88'  .ooooo.   .oooo.    888       888      oooo  ooo. .oo.  .oo.    .ooooo.
+#  888ooo88P'  d88' `88b `P  )88b   888       888      `888  `888P"Y88bP"Y88b  d88' `88b
+#  888`88b.    888ooo888  .oP"888   888       888       888   888   888   888  888ooo888
+#  888  `88b.  888    .o d8(  888   888       888       888   888   888   888  888    .o
+# o888o  o888o `Y8bod8P' `Y888""8o o888o     o888o     o888o o888o o888o o888o `Y8bod8P'
+#                                                                                     by nSSj_
+
+
+
+# plugin status
+
+activated: true
+
+# timezone (visit https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for a list)
+
+timezone: "America/New_York"
+
+# worlds where the plugin has to work ("world" is the main world)
+
+worlds:
+  - "world"
+
+# plugin messages (use the § character for colors, see https://minecraft.tools/en/color-code.php)
+# you can use the %timezone% variable in the current_timezone, wrong_timezone and timezone_updated
+
+messages:
+  already_activated: "§6The plugin is already activated!"
+  activated: "§aThe plugin has been activated."
+  already_deactivated: "§6The plugin is already deactivated!"
+  deactivated: "§cThe plugin has been deactivated."
+  current_timezone: "§bThe current timezone is §e§l%timezone%§r§b."
+  wrong_timezone: "§cThe timezone you typed does not exist!"
+  timezone_updated: "§aTimezone updated to §e§l%timezone%§r§a."
+  current_time: "§bIt's §e§l%time%§r§b."
