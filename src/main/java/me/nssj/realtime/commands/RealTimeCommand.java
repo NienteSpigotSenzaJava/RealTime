@@ -80,7 +80,7 @@ public class RealTimeCommand implements CommandExecutor, TabCompleter {
                     ZoneId timezone = ZoneId.of(config.getString("timezone"));
                     ZonedDateTime now = ZonedDateTime.now(timezone);
 
-                    player.sendMessage(config.getString("messages.current_time").replace("%time%", now.toLocalTime().format(DateTimeFormatter.ofPattern("H:m:s"))));
+                    player.sendMessage(config.getString("messages.current_time").replace("%time%", now.toLocalTime().format(DateTimeFormatter.ofPattern("H:m:s"))).replace("%timezone%", config.getString("timezone")));
 
                 }
 

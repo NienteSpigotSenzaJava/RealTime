@@ -49,6 +49,7 @@ public final class RealTime extends JavaPlugin {
         console.sendMessage("§6║                 §cRealTime disabled                 §6║");
         console.sendMessage("§6║ §bhttps://github.com/NienteSpigotSenzaJava/RealTime §6║");
         console.sendMessage("§6╚═══════════════════════════════════════════════════╝");
+
     }
 
     public static void startTask(Plugin plugin) {

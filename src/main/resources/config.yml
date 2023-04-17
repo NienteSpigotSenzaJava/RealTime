@@ -23,7 +23,8 @@ worlds:
   - "world"
 
 # plugin messages (use the § character for colors, see https://minecraft.tools/en/color-code.php)
-# you can use the %timezone% variable in the current_timezone, wrong_timezone and timezone_updated
+# you can use the %timezone% variable in current_timezone, wrong_timezone, timezone_updated and current_time
+# you can also use %time% in current_time
 
 messages:
   already_activated: "§6The plugin is already activated!"

@@ -1,4 +1,5 @@
 name: RealTime
+description: Syncronize real time with Minecraft time.
 version: '${project.version}'
 main: me.nssj.realtime.RealTime
 api-version: 1.13
