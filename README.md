@@ -22,11 +22,11 @@ The plugin has one command which is ```/rtime``` (also ```/rt``` or ```/realtime
 
 | Argument                      | Usage                                        |
 |-------------------------------|----------------------------------------------|
-| ```/rt activate```            | Activate the plugin                          |
-| ```/rt deactivate```          | Deactivate the plugin                        |
-| ```/rt timezone```            | Get the actual timezone                      |
-| ```/rt timezone <timezone>``` | Change the actual timezone                   |
-| ```/rt time```                | Get the actual time in the selected timezone |
+| ```/rtime activate```            | Activate the plugin                          |
+| ```/rtime deactivate```          | Deactivate the plugin                        |
+| ```/rtime timezone```            | Get the actual timezone                      |
+| ```/rtime timezone <timezone>``` | Change the actual timezone                   |
+| ```/rtime time```                | Get the actual time in the selected timezone |
 
 ## Compatibility
 
