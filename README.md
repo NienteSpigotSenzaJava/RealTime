@@ -1,4 +1,4 @@
-# RealTime
+# ⏰ RealTime
 
 Syncronize real time with Minecraft time.
 
