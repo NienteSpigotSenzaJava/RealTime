@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class RealTimeCommand implements CommandExecutor, TabCompleter {
+public final class RealTimeCommand implements CommandExecutor, TabCompleter {
 
     private final Plugin plugin;
 
@@ -116,7 +116,7 @@ public class RealTimeCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public List<String> onTabComplete(final CommandSender sender, final Command command, final String alias, final String[] args) {
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
 
         if (args.length == 1) {
 

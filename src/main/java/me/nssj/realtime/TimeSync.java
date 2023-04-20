@@ -10,7 +10,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-public class TimeSync extends BukkitRunnable {
+public final class TimeSync extends BukkitRunnable {
 
     private final Plugin plugin;
 
