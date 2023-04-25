@@ -18,7 +18,7 @@ you will find ```RealTime-1.0.0.jar``` in the ```/target``` directory.
 
 ## Usage
 
-The plugin has one command which is ```/rtime``` (also ```/rt``` or ```/realtime```), below you can find a list of usages for the command
+The plugin has one command which is ```/rtime``` (also ```/rt``` or ```/realtime```), below you can find a list of usages for the command.
 
 | Argument                      | Usage                                        |
 |-------------------------------|----------------------------------------------|
