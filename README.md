@@ -30,7 +30,7 @@ The plugin has one command which is ```/rtime``` (also ```/rt``` or ```/realtime
 
 ## Compatibility
 
-The plugin should work from version ```1.13.2``` to version ```1.19.4```, for any problem just open an issue.
+The plugin should work from version ```1.13.2``` to version ```1.19.4``` (latest atm), for any problem just open an issue.
 
 ## Contributing
 
